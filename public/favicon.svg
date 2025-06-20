@@ -1,0 +1,47 @@
+<!-- public/favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </radialGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#38bdf8"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#38bdf8" flood-opacity="0.5"/>
+    </filter>
+    <filter id="flame" x="0" y="0">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo -->
+  <circle cx="32" cy="32" r="30" fill="url(#bgGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+
+  <!-- Letra M centrada -->
+  <g text-anchor="middle" dominant-baseline="middle">
+    <text x="32" y="34"
+          font-family="'Orbitron', sans-serif"
+          font-size="28"
+          font-weight="bold"
+          fill="url(#textGrad)"
+          filter="url(#glow)">
+      M
+    </text>
+
+    <!-- Fuego animado -->
+    <text x="32" y="34"
+          font-family="'Orbitron', sans-serif"
+          font-size="28"
+          font-weight="bold"
+          fill="url(#textGrad)"
+          filter="url(#flame)"
+          opacity="0.5">
+      M
+    </text>
+  </g>
+</svg>
